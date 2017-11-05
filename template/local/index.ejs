@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>主页</title>
+</head>
+<body>
+
+    <div>
+        <h1 align="center">Hello World</h1>
+        <% if(!flag){ %>
+        <br /><a href="/login" style="text-align:center"> 登录 </a>
+        <br /><a href="/admin/login" style="text-align:center"> 管理员登录 </a>
+        <%}else if(Authorization=="user"){%>
+        <h2 align="center">欢迎您,<%=name%></h2>
+        <br /><a href="/home" style="text-align:center"> 个人中心 </a>
+        <br /><a href="/vote" style="text-align:center"> 投票渲染测试 </a>
+        <br /><a href="/logout" style="text-align:center"> 退出登录 </a>
+        <%}else{%>
+        <h2 align="center">欢迎您,<%=name%></h2>
+        <br /><a href="/stats" style="text-align:center"> 数据统计 </a>
+        <br /><a href="/vote/add" style="text-align:center"> 添加投票 </a>
+        <br /><a href="/vote/patch" style="text-align:center"> 修改投票 </a>
+        <br /><a href="/vote/delete" style="text-align:center"> 删除投票 </a>
+        <br /><a href="/logout" style="text-align:center"> 退出登录 </a>
+        <%}%>
+    </div>
+</body>
+</html>

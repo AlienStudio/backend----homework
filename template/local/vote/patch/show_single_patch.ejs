@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title><%="修改"+JSON.parse(object).Name%></title>
+</head>
+<body>
+<form action=<%="/vote/patch"%> id="voteForm" method="post">
+<p><%= object%></p><br />
+    <input type="hidden" name="value" value=<%=id%> />
+    <textarea rows="5" cols="50" name="object" form="voteForm"></textarea>
+    <br />
+    <input type="submit">
+<h1>我后端数据给你了，前端自己做</h1>
+</form>
+<br>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+</head>
+<body>
+    <div class="login-dialog">
+        <script>
+            function check(form)
+            {
+                var name = form.username.value.toString().replace(/[ \b\f\n\r\t]/g, '');
+                if(name === "")
+                {
+                    alert("用户名不能为空");
+                    return false;
+                }else if(form.password.value === ""){
+                    alert("密码不能为空");
+                    return false;
+                }
+                return true;
+            }
+        </script>
+        <form action="/login" method="post" onSubmit="return check(this)">
+            用户：<input type="text" name="username"/><br />
+            密码：<input type="password" name="password"/><br />
+            <input type="submit" value="登录"/>
+            <a href="/admin/login"><input type="button" value="跳转至管理员登录"></input></a><br />
+        </form>
+    </div>
+</body>
+</html>
