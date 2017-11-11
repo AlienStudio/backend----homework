@@ -2,7 +2,7 @@
 var config = {
     database: 'vote',
     username: 'root',
-    password: 'toor',
+    password: 'lzhxyl47',
     host: '127.0.0.1',
     port: 3306
 };
