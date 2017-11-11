@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>参与投票</title>
+</head>
+<body>
+<h1>参与投票</h1>
+<%if(JSON.stringify(data) == "{}"){%>
+    <b>您已参与了所有的投票</b>
+<br /><a href="/vote/stats" style="text-align:center"> 查看数据统计 </a>
+<br /><a href="/home" style="text-align:center"> 返回</a>
+<%}else{%>
+    <%for(let i in data){%>
+        <b><%=data[i]%></b>&emsp;&emsp;<input type="button" onclick=<%="window.location.href="+"'/vote/join/"+i+"'"%> value="参与">
+    <%}%>
+<%}%>
+</body>
+</html>

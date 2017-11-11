@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>删除投票</title>
+</head>
+<body>
+<h1>删除</h1>
+<%if(JSON.stringify(data) == "{}"){%>
+    <b>这里空空如也</b>
+<%}else{%>
+    <%for(let i in data){%>
+    <form id=<%=i%> method="post" action=<%"/delete"%>>
+        <input type="hidden" name="value" value=<%=i%> /><br />
+        <b><%=data[i]%></b>&emsp;&emsp;<input type="submit" value="删除"><br />
+    </form>
+    <%}%>
+<%}%>
+</body>
+</html>

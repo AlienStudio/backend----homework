@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title><%=Name%></title>
+</head>
+<body>
+<form method="post" action="/vote/join">
+    <%if(GlobalAttribute==true){
+    for(var i=0;i<Questions.length;i++){%>
+        <h3><%-Questions[i].Description%></h3>
+        <%for(var j=0;j<Questions[i].Options.length;j++){ %>
+            <input type= <%=Attribute%> <%= j==0?"checked=\"checked\"":"" %> name=<%=i%> value=<%=j%> />
+            <%-Questions[i].Options[j]%>
+        <%if(j!=Questions[i].Options.length-1){%>
+        <br />
+        <%}%>
+        <%}
+        if(i!=Questions.length-1){%>
+            <br />
+        <%}%>
+    <%}%>
+<%}else{%>
+    <%for(var i=0;i<Questions.length;i++){%>
+        <h3><%-Questions[i].Description%></h3>
+        <%var b_type=(Questions[i].Attribute=="radio")%>
+        <%for(var j=0;j<Questions[i].Options.length;j++){ %>
+            <input type= <%=Questions[i].Attribute%> <%=j==0&&b_type?"checked=\"checked\"":"" %> name=<%=i%> value=<%=j%> />
+            <%-Questions[i].Options[j]%>
+            <%if(j!=Questions[i].Options.length-1){%>
+                <br />
+            <%}%>
+        <%}
+        if(i!=Questions.length-1){%>
+            <br />
+        <%}%>
+    <%}%>
+    <%}%>
+    <br />
+    <input type="hidden" name="voteID" value=<%=id%>>
+    <input type="submit" value="提交" />
+</form>
+</body>
+</html>
